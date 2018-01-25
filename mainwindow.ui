@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>438</width>
+    <height>451</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DataManager</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>База данных:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox">
+      <property name="currentText">
+       <string/>
+      </property>
+      <property name="modelColumn">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="create">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Создать запись</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="remove">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Удалить запись</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="find">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Найти</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="merge">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Импортировать данные</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>438</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="helpAction"/>
+    <addaction name="separator"/>
+    <addaction name="aboutAction"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+    <addaction name="newAction"/>
+    <addaction name="openAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveAsAction"/>
+    <addaction name="separator"/>
+    <addaction name="modelManagerAction"/>
+    <addaction name="separator"/>
+    <addaction name="quitAction"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Правка</string>
+    </property>
+    <addaction name="createEntryAction"/>
+    <addaction name="removeEntryAction"/>
+    <addaction name="findAction"/>
+    <addaction name="exportDataAction"/>
+    <addaction name="separator"/>
+    <addaction name="upAction"/>
+    <addaction name="downAction"/>
+    <addaction name="separator"/>
+    <addaction name="minimizeColumnSizeAction"/>
+   </widget>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="newAction">
+   <property name="text">
+    <string>Создать...</string>
+   </property>
+   <property name="statusTip">
+    <string>Создать базу данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="openAction">
+   <property name="text">
+    <string>Открыть...</string>
+   </property>
+   <property name="statusTip">
+    <string>Открыть базу данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="saveAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Сохранить...</string>
+   </property>
+   <property name="statusTip">
+    <string>Сохранить базу данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="saveAsAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Сохранить как...</string>
+   </property>
+   <property name="statusTip">
+    <string>Сохранить как</string>
+   </property>
+  </action>
+  <action name="helpAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Помощь</string>
+   </property>
+   <property name="statusTip">
+    <string>Помощь</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+   <property name="statusTip">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="modelManagerAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Редактор моделей...</string>
+   </property>
+   <property name="statusTip">
+    <string>Редактор моделей</string>
+   </property>
+  </action>
+  <action name="quitAction">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="statusTip">
+    <string>Выйти из приложения</string>
+   </property>
+  </action>
+  <action name="createEntryAction">
+   <property name="text">
+    <string>Создать запись</string>
+   </property>
+   <property name="statusTip">
+    <string>Создать запись в открытой базе данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="removeEntryAction">
+   <property name="text">
+    <string>Удалить запись</string>
+   </property>
+   <property name="statusTip">
+    <string>Удалить запись из открытой базы данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="findAction">
+   <property name="text">
+    <string>Найти</string>
+   </property>
+   <property name="statusTip">
+    <string>Найти запись в базе данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="exportDataAction">
+   <property name="text">
+    <string>Импортировать данные</string>
+   </property>
+   <property name="statusTip">
+    <string>Импортировать запись из другой базы данных</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="minimizeColumnSizeAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Минимализировать размер столбцов</string>
+   </property>
+   <property name="statusTip">
+    <string>Сделать размер столбцов зависимым от их содержимого</string>
+   </property>
+  </action>
+  <action name="upAction">
+   <property name="text">
+    <string>Сдвинуть запись вверх</string>
+   </property>
+   <property name="statusTip">
+    <string>Сдвинуть выделенную запись вверх</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="downAction">
+   <property name="text">
+    <string>Сдвинуть запись вниз</string>
+   </property>
+   <property name="statusTip">
+    <string>Сдвинуть выделенную запись вниз</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
